@@ -1,0 +1,9 @@
+[INFO ] 2022-05-27 18:51:17.249 [main] log4jdemo - This is the Information Message
+[ERROR] 2022-05-27 18:51:17.250 [main] log4jdemo - This is an error message
+[WARN ] 2022-05-27 18:51:17.250 [main] log4jdemo - This is a warning message
+[FATAL] 2022-05-27 18:51:17.251 [main] log4jdemo - This is a fatal message
+[TRACE] 2022-05-27 18:55:27.095 [main] log4jdemo - This is a trace message
+[INFO ] 2022-05-27 18:55:27.096 [main] log4jdemo - This is the Information Message
+[ERROR] 2022-05-27 18:55:27.097 [main] log4jdemo - This is an error message
+[WARN ] 2022-05-27 18:55:27.097 [main] log4jdemo - This is a warning message
+[FATAL] 2022-05-27 18:55:27.109 [main] log4jdemo - This is a fatal message
