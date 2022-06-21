@@ -34,7 +34,7 @@ public class BrowserTest {
 		
 	
 		
-		//driver.close();
+		driver.close();
 		
 	}
 

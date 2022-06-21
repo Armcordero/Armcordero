@@ -1,5 +1,6 @@
 package demos;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
@@ -20,7 +21,7 @@ public class FluentlyWaitsDemo {
 	}
 	
 	public static void FluentlyWaits () throws Exception {
-		
+	
 		System.setProperty("webdriver.chrome.driver", "src\\chromedriver.exe");
 		driver = new ChromeDriver();
 		
@@ -33,11 +34,11 @@ public class FluentlyWaitsDemo {
 		
 		// Waiting 30 seconds for an element to be present on the page, checking
 		   // for its presence once every 5 seconds.
-		   Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-		    //   .withTimeout(30, TimeUnit.SECONDS)
-		     //  .pollingEvery(5, TimeUnit.SECONDS)
-		       .ignoring(NoSuchElementException.class);
-
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+		      .withTimeout(Duration.ofSeconds(30))
+		      .pollingEvery(Duration.ofSeconds(5))
+		      .ignoring(NoSuchElementException.class);
+		   
 		   WebElement element = wait.until(new Function<WebDriver, WebElement>() {
 		     public WebElement apply(WebDriver driver) {
 		       return driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/a/h3"));

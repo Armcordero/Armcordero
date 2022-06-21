@@ -20,11 +20,11 @@ public class SeleniumWaitsDemo {
 	public static void seleniumWaits () { 
 		
 		System.setProperty("webdriver.chrome.driver", "src\\chromedriver.exe");
-		driver = new ChromeDriver();
+		driver = new ChromeDriver(); 
 		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
-		driver.manage().window().maximize();
+		driver.manage().window().maximize(); 
 		driver.get("https://tutorialspoint.com");
 		
 		driver.findElement(By.xpath("/html/body/header/nav/div/div[2]/a")).click();

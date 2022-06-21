@@ -17,10 +17,14 @@ public class AutoItDemo extends SetPropertiess{
 	
 	@SuppressWarnings("deprecation")
 	public static void AutoIT() throws Exception {
-		
+	
 		driver.get("https://ufile.io/");
 		driver.findElement(By.xpath("//*[@id=\"upload-window\"]/div")).click();
 		
-		Runtime.getRuntime().exec("C:/Users/AubreyCordero/Desktop/AutoIT/SampleAutoIT.exe");
+		Runtime.getRuntime().exec("C:\\Users\\AubreyCordero\\Desktop\\AutoIT\\SampleAutoIT.exe");
+		
+		System.out.println("Test Completed");
  }
+	
+	
 }

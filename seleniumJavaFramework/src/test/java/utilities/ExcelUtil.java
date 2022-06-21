@@ -1,5 +1,6 @@
 package utilities;
 
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -36,8 +37,9 @@ public class ExcelUtil {
 			int rowCount=0;
 			
 			try {
-			
-				rowCount = sheet.getPhysicalNumberOfRows();
+				
+				rowCount = sheet.getLastRowNum()-sheet.getFirstRowNum();
+				//rowCount = sheet.getPhysicalNumberOfRows();
 				System.out.println("No. of Rows: " + rowCount);
 			
 			}  
@@ -57,7 +59,6 @@ public class ExcelUtil {
 		int colCount = 0;
 		
 		try {
-		
 			colCount = sheet.getRow(0).getPhysicalNumberOfCells();
 			System.out.println("No. of Column: " + colCount);
 		
@@ -76,10 +77,11 @@ public class ExcelUtil {
 	public static String getCellCountString (int rowNum, int colNum) {
 		
 		String cellCount = null;
-		
+		DataFormatter formatter = new DataFormatter ();
 		try {
 			
-			cellCount = sheet.getRow(rowNum).getCell(colNum).getStringCellValue();
+			cellCount = formatter.formatCellValue(sheet.getRow(rowNum).getCell(colNum));
+//			cellCount = sheet.getRow(rowNum).getCell(colNum).getStringCellValue();
 			//System.out.println(cellCount);
 					
 		} catch (Exception exp) {
